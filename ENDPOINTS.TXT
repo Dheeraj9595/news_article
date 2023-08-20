@@ -1,0 +1,7 @@
+
+http://127.0.0.1:8000/ - To see Headlines  Home page
+http://127.0.0.1:8000/fetch-news/ - To Search Articles 
+http://127.0.0.1:8000/sources/ - To get sources
+http://127.0.0.1:8000/signup/ - To signup
+http://127.0.0.1:8000/login/ - To login
+http://127.0.0.1:8000/logout/ - To logout

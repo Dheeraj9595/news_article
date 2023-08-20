@@ -1,0 +1,117 @@
+/* Pagination and Links */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.step-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007BFF;
+    /* Bootstrap primary blue */
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.step-links a:hover,
+.highlighted a:hover {
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+}
+
+.highlighted a {
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Main Title */
+h1 {
+    background-color: #343a40;
+    /* Bootstrap dark gray */
+    color: white;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Article list styles */
+li {
+    list-style-type: none;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    transition: background-color 0.3s;
+}
+
+li:hover {
+    background-color: #f5f5f5;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+h3 a {
+    text-decoration: none;
+    color: #343a40;
+    /* Bootstrap dark gray */
+    transition: color 0.3s;
+}
+
+h3 a:hover {
+    color: #007BFF;
+    /* Bootstrap primary blue */
+}
+
+img {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    /* you can set this to your desired max width */
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+p strong {
+    font-weight: bold;
+}
+
+.highlighted-headline {
+    background-color: #FFD700;
+    /* Gold background */
+    cursor: pointer;
+    text-decoration: underline;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.highlighted-headline:hover {
+    color: blue;
+}
+
+body {
+    zoom: 70%;
+    font-family: Arial, sans-serif;
+    /* Optional: to set a specific font */
+    background-color: #f8f9fa;
+    /* Bootstrap light background color for better visibility */
+}
+
+.container {
+    margin-left: 0;
+    max-width: 100%;
+}

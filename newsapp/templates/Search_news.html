@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search News{% endblock title %}
+
+
+{% block main-content %}
+<title>News Search</title>
+<body>
+    <h1>Search for News Articles</h1>
+    <a href="{% url 'logout' %}" class="btn btn-primary float-right">Logout</a>
+    <form method="post" class="form-inline my-2 my-lg-0">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Enter keyword" value="{{ keyword }}">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <aside>
+        <h4>Recent Searches</h4>
+        <ul>
+            {% for search in recent_searches %}
+                <li>{{ search.keyword }} ({{ search.searched_at|date:"Y-m-d H:i" }})</li>
+            {% endfor %}
+        </ul>
+    </aside>
+    
+    
+    {% if keyword %} <!-- Check if keyword is present -->
+        <h2>Results for "{{ keyword }}"</h2>
+        {% if articles %}
+            <ul>
+            {% for article in articles %}
+                <li>
+                    <h3><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
+                    <img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="200">
+                    <p>{{ article.publishedAtFormatted }}</p>
+
+                    <p>{{ article.description }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No articles found.</p>
+        {% endif %}
+    {% endif %}
+</body>
+{% endblock main-content %}
+
+
+

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search News{% endblock title %}
+
+{% block main-content %}
+<body>
+    <h1>Sources/News</h1>
+    <a href="{% url 'logout' %}" class="btn btn-primary float-right">Logout</a>
+    
+    <ul>
+    {% for source in sources %}
+        <li>
+            <h2><a href="{{ source.url }}" target="_blank">{{ source.name }}</a></h2>
+            <p>{{ source.description }}</p>
+            <p><strong>Category:</strong> {{ source.category }}</p>
+            <p><strong>Language:</strong> {{ source.language }}</p>
+            <p><strong>Country:</strong> {{ source.country }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+{% endblock main-content %}

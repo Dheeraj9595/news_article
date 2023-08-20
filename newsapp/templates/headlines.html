@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Headlines{% endblock title %}
+
+{% block main-content %}
+
+{% if articles %}
+<head>
+<a href="{% url 'headlines' %}" onclick="location.reload();"> 
+    <h2 class="highlighted-headline">Latest Headlines</h2>
+    <a href="{% url 'logout' %}" class="btn btn-primary float-right">Logout</a>
+</a>
+</head>
+    <body>
+        <ul>
+            {% for article in articles %}
+            <li>
+                <h3><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h3>
+                <img src="{{ article.urlToImage }}" alt="{{ article.title }}" width="500">
+                <p>{{ article.description }}</p>
+                <p><strong>Published at:</strong> {{ article.publishedAtFormatted }}</p>
+            </li>
+            {% endfor %}
+
+        </ul>
+        {% else %}
+        <p>No articles found.</p>
+        {% endif %}
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if articles.has_previous %}
+                <a href="?page=1&keyword={{ keyword }}">First</a>
+                <a href="?page={{ articles.previous_page_number }}&keyword={{ keyword }}">Previous</a>
+                {% endif %}
+
+                <span class="highlighted">
+                    {% if articles.has_next %}
+                    <a href="?page={{ articles.next_page_number }}&keyword={{ keyword }}">Next</a>
+                    {% else %}
+                    Next
+                    {% endif %}
+                </span>
+
+                {% if articles.has_next %}
+                <a href="?page={{ articles.paginator.num_pages }}&keyword={{ keyword }}">Last</a>
+                {% endif %}
+            </span>
+        </div>
+
+
+    </body>
+
+{% endblock main-content %}
