@@ -44,7 +44,7 @@ def fetch_news(request):
             UserSearch.objects.create(user=request.user, keyword=keyword)
 
     recent_searches = UserSearch.objects.order_by(
-        '-searched_at')[:10]  # gets the last 10 searches
+        '-searched_at')[:5]  # gets the last 10 searches
 
     return render(request, 'Search_news.html', {
         'articles': articles,
