@@ -7,7 +7,6 @@
 <title>News Search</title>
 <body>
     <h1>Search for News Articles</h1>
-    <a href="{% url 'logout' %}" class="btn btn-primary float-right">Logout</a>
     <form method="post" class="form-inline my-2 my-lg-0">
         {% csrf_token %}
         <input class="form-control mr-sm-2" type="text" name="keyword" placeholder="Enter keyword" value="{{ keyword }}">
@@ -18,7 +17,7 @@
         <h4>Recent Searches</h4>
         <ul>
             {% for search in recent_searches %}
-                <li>{{ search.keyword }} ({{ search.searched_at|date:"Y-m-d H:i" }})</li>
+                <li>{{ search.keyword }}</li>
             {% endfor %}
         </ul>
     </aside>

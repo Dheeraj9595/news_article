@@ -5,8 +5,6 @@
 {% block main-content %}
 <body>
     <h1>Sources/News</h1>
-    <a href="{% url 'logout' %}" class="btn btn-primary float-right">Logout</a>
-    
     <ul>
     {% for source in sources %}
         <li>
