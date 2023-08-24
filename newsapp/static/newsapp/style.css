@@ -115,3 +115,23 @@ body {
     margin-left: 0;
     max-width: 100%;
 }
+
+/* ... your previous CSS ... */
+
+/* Navbar link hover styles */
+.navbar-nav .nav-link:hover {
+    color: rgb(255, 31, 165) !important;
+    color: red !important; 
+    font-weight: bold;  /* This makes the text bold on hover */
+
+}
+
+.nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: #fce216;  /* This is just a light gray color; you can choose your own */
+    color: rgb(255, 245, 56);  /* Change the text color on hover */
+    color: red !important; 
+    font-weight: bold;  /* This makes the text bold on hover */
+}
+
+/* ... rest of your CSS ... */
+
